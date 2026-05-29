@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Anniversary Maa & Papa</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+
+    html,body{
+  width:100%;
+  min-height:100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+  overflow-x:hidden;
+  overflow-y:auto;
+  color:white;
+}
+
+    .hero{
+      min-height:auto;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      position:relative;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.35);
+      top:0;
+      left:0;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      animation:fadeIn 2s ease;
+    }
+
+    h1{
+      font-size:4rem;
+      font-family:'Great Vibes',cursive;
+      margin-bottom:20px;
+    }
+
+    .date{
+      font-size:1.4rem;
+      margin-bottom:25px;
+    }
+
+    .main-line{
+      max-width:850px;
+      font-size:1.2rem;
+      line-height:1.8;
+      background:rgba(255,255,255,0.15);
+      padding:25px;
+      border-radius:20px;
+      backdrop-filter:blur(10px);
+    }
+
+    .heart{
+      font-size:4rem;
+      animation:heartbeat 1.5s infinite;
+      margin-bottom:20px;
+    }
+
+    .gallery-section{
+      padding:80px 30px;
+      text-align:center;
+    }
+
+    .gallery-title{
+      font-size:3rem;
+      margin-bottom:50px;
+      font-family:'Great Vibes',cursive;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.15);
+      border-radius:25px;
+      overflow:hidden;
+      backdrop-filter:blur(10px);
+      transition:0.4s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.03);
+    }
+
+    .card img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+    }
+
+    .card p{
+      padding:20px;
+      line-height:1.6;
+    }
+
+    .message-section{
+      padding:90px 20px;
+      text-align:center;
+      background:rgba(0,0,0,0.2);
+    }
+
+    .message-box{
+      max-width:900px;
+      margin:auto;
+      background:rgba(255,255,255,0.12);
+      padding:40px;
+      border-radius:25px;
+      backdrop-filter:blur(12px);
+      line-height:2;
+      font-size:1.15rem;
+    }
+
+    .footer{
+  padding:30px;
+  text-align:center;
+  background:#00000040;
+  margin-bottom:0;
+}
+
+    .floating-hearts span{
+      position:fixed;
+      bottom:-20px;
+      animation:float 10s linear infinite;
+      opacity:0.7;
+      color:white;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+      }
+      10%{
+        opacity:1;
+      }
+      100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    @keyframes heartbeat{
+      0%,100%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.2);
+      }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:2.7rem;
+      }
+
+      .gallery-title{
+        font-size:2.3rem;
+      }
+
+      .main-line{
+        font-size:1rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+
+<div class="floating-hearts">
+  <span style="left:5%;font-size:20px;">❤</span>
+  <span style="left:15%;font-size:30px;animation-delay:2s;">❤</span>
+  <span style="left:30%;font-size:25px;animation-delay:4s;">❤</span>
+  <span style="left:50%;font-size:35px;animation-delay:1s;">❤</span>
+  <span style="left:65%;font-size:28px;animation-delay:5s;">❤</span>
+  <span style="left:80%;font-size:22px;animation-delay:3s;">❤</span>
+  <span style="left:90%;font-size:40px;animation-delay:6s;">❤</span>
+</div>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div id="countdown"
+      style="font-size:1.5rem;font-weight:600;margin-bottom:20px;background:rgba(255,255,255,0.15);padding:12px 25px;border-radius:50px;display:inline-block;">
+      Loading Countdown...
+    </div>
+
+    <div id="typing-text"
+      style="font-size:1.3rem;margin-bottom:20px;color:#ffeaea;">
+    </div>
+
+    <div class="heart">❤️</div>
+
+    <h1>Binay Singh ❤️ Sangita Singh</h1>
+
+    <div class="date">Happy Anniversary • 30 May</div>
+
+    <div class="main-line">
+      Dear Maa & Papa,
+      <br><br>
+
+      Aap dono sirf husband-wife nahi ho,
+      aap dono hamare ghar ki jaan ho.
+
+      <br><br>
+
+      Aapke pyar aur support ne hamesha hume strong banaya hai ❤️
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Gallery -->
+
+<section class="gallery-section">
+
+  <h2 class="gallery-title">Beautiful Memories 📸</h2>
+
+  <div class="gallery">
+
+    <div class="card">
+      <img src="images/maa-papa-memory1.png.jpeg">
+      <p>"Ek perfect family ki sabse badi pehchan hoti hai ❤️"</p>
+    </div>
+
+    <div class="card">
+      <img src="images/maa-papa-memory2.png.jpeg">
+      <p>"Aap dono ki bonding har kisi ke liye inspiration hai."</p>
+    </div>
+
+    <div class="card">
+      <img src="images/maa-papa-memory3.png.jpeg">
+      <p>"True love wahi hota hai jo har situation me saath nibhaaye."</p>
+    </div>
+
+    <div class="card">
+      <img src="images/maa-papa-memory4.png.jpeg">
+      <p>"Maa aur Papa meri duniya ke sabse precious log."</p>
+    </div>
+
+    <div class="card">
+      <img src="images/maa-papa-memory5.png.jpeg">
+      <p>"Khushiyon ka asli matlab ghar aur family hota hai."</p>
+    </div>
+
+    <div class="card">
+      <img src="images/maa-papa-memory6.png.jpeg">
+      <p>"Aap dono ka saath hamesha aise hi bana rahe ❤️"</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Message -->
+
+<section class="message-section">
+
+  <div class="message-box">
+
+    <h2 style="font-family:'Great Vibes',cursive;font-size:3rem;margin-bottom:20px;">
+      A Small Message For You ❤️
+    </h2>
+
+    Maa & Papa,
+    <br><br>
+
+    Main lucky hu ki mujhe aap dono jaise parents mile.
+    Aap dono ne hamesha mera support kiya ❤️
+
+    <br><br>
+
+    Happy Anniversary ❤️
+
+  </div>
+
+</section>
+
+<!-- Video -->
+
+<section style="padding:80px 20px;text-align:center;min-height:auto;">
+
+  <h2 style="font-family:'Great Vibes',cursive;font-size:3rem;margin-bottom:30px;">
+    Beautiful Video Memory 🎥
+  </h2>
+
+  <video controls autoplay loop muted
+  style="width: 45%;
+  max-width: 400px;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+  
+    <source src="family-video.mp4/family-video.mp4.mp4" type="video/mp4">
+
+  </video>
+
+</section> 
+
+<!-- Cake -->
+
+<section style="padding:70px 20px;text-align:center;background:rgba(255,255,255,0.08);">
+
+  <h2 style="font-family:'Great Vibes',cursive;font-size:3rem;margin-bottom:40px;">
+    Cake Celebration 🎂
+  </h2>
+
+  <div style="font-size:7rem;animation:heartbeat 1.5s infinite;">
+    🎂
+  </div>
+
+</section>
+
+<!-- Surprise Popup -->
+
+<div id="popup"
+  style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;justify-content:center;align-items:center;z-index:9999;">
+
+  <div style="background:white;color:#333;padding:40px;border-radius:25px;text-align:center;max-width:500px;">
+
+    <h2 style="font-size:2rem;margin-bottom:20px;">
+      ❤️ Special Surprise ❤️
+    </h2>
+
+    <p style="line-height:1.8;">
+      Dear Maa & Papa,
+      <br><br>
+
+      Thank you for giving me the best life,
+      best memories and endless love ❤️
+    </p>
+
+    <button onclick="document.getElementById('popup').style.display='none'"
+      style="margin-top:20px;padding:12px 30px;border:none;border-radius:50px;background:#ff4d6d;color:white;font-size:1rem;cursor:pointer;">
+
+      Open Surprise
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- Timeline -->
+
+<section style="padding:90px 20px;text-align:center;">
+
+  <h2 style="font-family:'Great Vibes',cursive;font-size:3.5rem;margin-bottom:50px;">
+    Our Beautiful Journey ❤️
+  </h2>
+
+  <div style="max-width:900px;margin:auto;display:grid;gap:30px;">
+
+    <div style="background:rgba(255,255,255,0.15);padding:25px;border-radius:20px;">
+      💕 Pehli Mulaqat
+    </div>
+
+    <div style="background:rgba(255,255,255,0.15);padding:25px;border-radius:20px;">
+      💍 Shaadi Ka Khoobsurat Din
+    </div>
+
+    <div style="background:rgba(255,255,255,0.15);padding:25px;border-radius:20px;">
+      👨‍👩‍👦 Happy Family Moments
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Childhood -->
+
+<section style="padding:90px 20px;background:rgba(0,0,0,0.2);text-align:center;">
+
+  <h2 style="font-family:'Great Vibes',cursive;font-size:3rem;margin-bottom:40px;">
+    Childhood Memories 📸
+  </h2>
+
+  <div class="gallery">
+
+    <div class="card">
+      <img src="images/childhood1.png.jpeg">
+      <p>"Aap dono ke bina mera bachpan adhura hota ❤️"</p>
+    </div>
+
+    <div class="card">
+      <img src="images/childhood2.png.jpeg">
+      <p>"Har smile ke peeche Maa Papa ka pyar hota hai 💖"</p>
+    </div>
+
+    <div class="card">
+      <img src="images/childhood3.png.jpeg">
+      <p>"Meri har khushi ki wajah sirf aap dono ho ❤️"</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Reasons -->
+
+<section style="padding:90px 20px;text-align:center;background:rgba(255,255,255,0.08);">
+
+  <h2 style="font-family:'Great Vibes',cursive;font-size:3rem;margin-bottom:50px;">
+    Reasons Why I Love You ❤️
+  </h2>
+
+  <div class="gallery">
+
+    <div class="card">
+      <img src="images/reason1.png.jpeg">
+      <p>❤️ Thank you for always supporting me.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/reason2.png.jpeg">
+      <p>❤️ Thank you for teaching me life lessons.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/reason3.png.jpeg">
+      <p>❤️ Thank you for making my life beautiful.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Letter -->
+
+<section style="padding:100px 20px;text-align:center;">
+
+  <div style="max-width:900px;margin:auto;background:#fff8dc;color:#333;padding:50px;border-radius:20px;font-family:cursive;line-height:2;font-size:1.2rem;">
+
+    <h2 style="font-size:3rem;margin-bottom:30px;">
+      A Letter For You 💌
+    </h2>
+
+    Dear Maa & Papa,
+    <br><br>
+
+    Main jo bhi hu aaj,
+    wo sirf aap dono ki wajah se hu ❤️
+
+    <br><br>
+
+    Happy Anniversary ❤️
+
+  </div>
+
+</section>
+
+<!-- Family -->
+
+<section style="padding:80px 20px;text-align:center;background:rgba(0,0,0,0.2);">
+
+  <h2 style="font-family:'Great Vibes',cursive;font-size:3rem;margin-bottom:40px;">
+    Our Family 👨‍👩‍👦
+  </h2>
+
+  <div style="font-size:1.3rem;line-height:2.5;">
+    👨 Binay Singh
+    <br>❤️<br>
+    👩 Sangita Singh
+    <br>↓<br>
+    👦 Loving Son
+  </div>
+
+</section>
+
+<!-- Final -->
+
+<section style="padding:120px 20px;text-align:center;">
+
+  <img src="images/final-memory.png.jpg">
+
+  <h2 style="font-family:'Great Vibes',cursive;font-size:4rem;animation:heartbeat 1.5s infinite;">
+    Thank You Maa & Papa ❤️
+  </h2>
+
+</section>
+
+<!-- Footer -->
+
+<div class="footer">
+  Made by ❤️ Your Son
+</div>
+
+<!-- Music -->
+
+<audio autoplay loop>
+  <source src="music.mp3/music.mp3.mp3" type="audio/mp3">
+</audio>
+
+</body>
+</html>
